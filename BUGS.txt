@@ -1,0 +1,10 @@
+Buglist:
+- Unresolved
+x Resolved
+* Feature disable
+? Not sure if bug or feature
+[ Reason or cause ]
+
+Prepend list from top
+----------
+-   XML parsing of InternetAudioStream kind of location key fails
