@@ -6,8 +6,8 @@ It's made for the Windows version of iTunes.
 - Find orphan files, files in iTunes Media folder but not referenced in the iTunes library.
 - Dead links, files in itunes, but not in iTunes Media.
 - The tool also exports the two lists used in the comparison:
-        - Listed, all files in the library.
-        - Existing, all files on disk.
+ - Listed, all files in the library.
+ - Existing, all files on disk.
 
 ### How it works
 It does not take any arguments. Instead it expects the standard Windows iTunes directory layout. And that you've exported the library to an XML.
@@ -31,12 +31,13 @@ The directory should look like this (by default):
 </pre>
 
 When done, there will be 4 files made in the execution directory.
-| Files        				| Content 										|
-| ------------------------- | --------------------------------------------- |
-| Orphanator_existing.txt	| All files on disk.				 			|
-| Orphanator_listed.txt		| All files referenced by iTunes. 				|
-| Orphanator_orhpans.txt	| Files on disk, but not referenced by iTunes. 	|
-| Orphanator_unref.txt		| Files referenced by iTunes, but not on disk. 	|
+
+| Files                         | Content                                       |
+| ----------------------------- | --------------------------------------------- |
+| Orphanator_existing.txt       | All files on disk.                            |
+| Orphanator_listed.txt         | All files referenced by iTunes.               |
+| Orphanator_orhpans.txt        | Files on disk, but not referenced by iTunes.  |
+| Orphanator_unref.txt          | Files referenced by iTunes, but not on disk.  |`
 
 That it really. Quickly made. Used once.
 
