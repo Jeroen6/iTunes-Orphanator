@@ -23,6 +23,8 @@ HEADERS +=
 
 OTHER_FILES += \
     BUGS.txt \
-    LICENSE.md \
     README.md \
     TODO.txt
+
+DISTFILES += \
+    LICENSE.md

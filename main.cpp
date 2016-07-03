@@ -1,3 +1,26 @@
+/*
+MIT License
+
+Copyright (c) 2016 Jeroen Lodder
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
 #include <QCoreApplication>
 #include <QTextStream>
 #include <QFile>
@@ -55,7 +78,7 @@ void RecurseDirectory(const QString& sDir, QList<QString> &dirFiles)
     }
 }
 
-
+// Main application
 int main(int argc, char *argv[])
 {
     QCoreApplication a(argc, argv);
@@ -66,9 +89,9 @@ int main(int argc, char *argv[])
     cout << "Scanning " << endl;
     timer.start();
 
-    // Stage 1 : scan XML for all Location keys
+    // Stage 1 : scan exported XML for all Location keys
     QFile xmlFile;
-    xmlFile.setFileName("C:\\Users\\Jeroen\\Music\\iTunes\\Bibliotheek.xml");
+    xmlFile.setFileName(QDir::homePath()+"\\Music\\iTunes\\Library.xml");
     if (!xmlFile.open(QIODevice::ReadOnly | QIODevice::Text)) {
         qDebug() << "Load XML File Problem.";
     }
@@ -128,7 +151,7 @@ int main(int argc, char *argv[])
     }
 
     // Stage 3 : scan directory
-    QString dir("C:\\Users\\Jeroen\\Music\\iTunes\\iTunes Media\\Music");
+    QString dir(QDir::homePath()+"\\Music\\iTunes\\iTunes Media\\Music");
     RecurseDirectory(dir, dirFiles);
     // Clean data
     for(int i=0; i < dirFiles.count(); i++){
